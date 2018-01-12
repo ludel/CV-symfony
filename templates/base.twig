@@ -2,13 +2,23 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}CV{% endblock %}</title>
+        <title>CV - {% block title %}CV{% endblock %}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class="container">
+
+    <div class="container">
+        <table class="u-full-width">
+            <tr>
+                <td><a href="/" >Accueil</a></td>
+                <td><a href="{{ path('realisation') }}" >Réalisation</a></td>
+                <td><a href="{{ path('blog') }}" >Blog</a></td>
+                <td><a href="{{ path('admin') }}" >Admin</a></td>
+            </tr>
+        </table>
+
             {% block body %}{% endblock %}
         </div>
     </body>

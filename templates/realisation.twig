@@ -1,0 +1,12 @@
+{% extends 'base.twig' %}
+{% block title %}Réalisation{% endblock %}
+{% block body %}
+    <h2>Realisations</h2>
+    {% for realitem in realisation %}
+        <h4>{{ realitem.titre }}</h4>
+        <p>{{ realitem.description }}</p>
+        <p style="font-style: italic;">
+            Du {{ realitem.dateDebut  | date('d-m-Y') }} au {{ realitem.dateFin  | date('d-m-Y') }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}

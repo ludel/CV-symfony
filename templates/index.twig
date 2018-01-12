@@ -1,29 +1,88 @@
 {% extends 'base.twig' %}
+{% block title %}Accueil{% endblock %}
 {% block body %}
-    <h1>
-        Curriculum vitae
-    </h1>
 
-    <div>
-        <h4>
-            Experience
-        </h4>
-        <ul>
-            <li>Item 1</li>
-            <li>
-                Item 2
-                <ul>
-                    <li>Item 2.1</li>
-                    <li>Item 2.2</li>
-                </ul>
-            </li>
-            <li>Item 3</li>
-        </ul>
-    </div>
-    <h4>
-        Formation
-    </h4>
-    <h4>
-        Compétence
-    </h4>
+        <h1 style="text-align: center">
+            Curriculum vitae
+        </h1>
+        <p>{{ cv.texte }}</p>
+
+
+
+        <div class="row" style="margin-left: 140px;">
+            <div class="one-half column">
+                <div>
+                    <h4>Compétence</h4>
+                    <ul>
+                        <li>
+                            Python
+                            <ul>
+                                <li>Django</li>
+                                <li>Flask</li>
+                                <li>Machine-leaning</li>
+                            </ul>
+                        </li>
+
+                        <li>Java</li>
+                        <li>PHP
+                            <ul>
+                                <li>CodeIgniter</li>
+                                <li>Laravel</li>
+                                <li>Symfony</li>
+                            </ul>
+                        </li>
+
+                        <li>Linux
+                            <ul>
+                                <li>Debian</li>
+                                <li>Arch-linux</li>
+                            </ul>
+                        </li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="one-half column">
+                    <div>
+                        <h4>Infos personelles</h4>
+                        <ul>
+                            <li>{{ cv.nom }} {{ cv.prenom }}</li>
+                            <li>{{ cv.age }} ans</li>
+                            <li>{{ cv.addresse }}</li>
+                            <li>{{ cv.langue }}</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>
+                            Experience
+                        </h4>
+                        <ul>
+                            {% for itemexp in exp %}
+                                <li>{{ itemexp.titre }} | {{ itemexp.entreprise }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>Formation</h4>
+                        <ul>
+                            {% for itemformation in formation %}
+                                <li>{{ itemformation.ecole }} | {{ itemformation.titre }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+
+
+        </div>
+
 {% endblock %}
